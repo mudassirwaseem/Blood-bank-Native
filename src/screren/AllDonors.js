@@ -32,21 +32,21 @@ export default function AllDonors() {
                 <View style={styles.container}>
                     <Text style={{ fontSize: 34, margin: 10, textAlign: "center", color: "red", fontWeight: "bold" }}> Donors</Text>
 
+                    <ScrollView>
+                        {
+                            Alldata.map((all, key) => {
+                                return <View style={styles.container1} key={key} >
+                                    <Text style={{ textAlign: "center", fontSize: 20 }}> Name : {all.name}</Text>
+                                    <Text style={{ textAlign: "center", fontSize: 15 }}> Blood Group : {all.bloodgroup}</Text>
+                                    <Text style={{ textAlign: "center", fontSize: 15 }}> Gender : {all.gender}</Text>
+                                    <Text style={{ textAlign: "center", fontSize: 15 }}> Address : {all.address}</Text>
+                                    <Text style={{ textAlign: "center", fontSize: 15 }}> Contact : {all.Number}</Text>
+                                    <Text style={{ textAlign: "center", fontSize: 15 }}> Age : {all.age}</Text>
 
-                    {
-                        Alldata.map((all) => {
-                            return <View style={{ margin: 20 }} style={StyleSheet.container1}>
-                                <Text style={{ textAlign: "center", fontSize: 20 }}> Name : {all.name}</Text>
-                                <Text style={{ textAlign: "center", fontSize: 15 }}> Blood Group : {all.bloodgroup}</Text>
-                                <Text style={{ textAlign: "center", fontSize: 15 }}> Gender : {all.gender}</Text>
-                                <Text style={{ textAlign: "center", fontSize: 15 }}> Address : {all.address}</Text>
-                                <Text style={{ textAlign: "center", fontSize: 15 }}> Contact : {all.Number}</Text>
-                                <Text style={{ textAlign: "center", fontSize: 15 }}> Age : {all.age}</Text>
-
-                            </View>
-                        })
-                    }
-
+                                </View>
+                            })
+                        }
+                    </ScrollView>
 
                 </View>) :
             <View> <Text>Loading</Text></View>

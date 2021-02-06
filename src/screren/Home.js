@@ -1,10 +1,17 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import { StyleSheet, View, ScrollView, Text, Button, TouchableOpacity, Image } from 'react-native';
-
-
+import firebase from '../configFirebase'
 
 
 export default function Home(props) {
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                props.navigation.navigate("Main")
+                // ...
+            }
+        });
+    }, [])
     return (
         <View style={styles.container}>
             <Image
@@ -13,7 +20,7 @@ export default function Home(props) {
                     uri: 'https://i.ytimg.com/vi/JjfrEU3Quwg/maxresdefault.jpg',
                 }}
             />
-            <Text style={{ fontSize: 34,marginTop:30, textAlign: "center", color: "red", fontWeight: "bold" }}>
+            <Text style={{ fontSize: 34, marginTop: 30, textAlign: "center", color: "red", fontWeight: "bold" }}>
                 Welcome To Our Blood Bank
             </Text>
 

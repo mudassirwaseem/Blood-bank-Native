@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button,  Image, ImageBackground, TextInput, TouchableOpacity, ScrollView } from 'react-native';
+import firebase from '../configFirebase'
 
 export default function About(props) {
     const [email, setemail] = useState("")

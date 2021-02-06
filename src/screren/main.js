@@ -1,11 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Button, ActivityIndicator, Image, ImageBackground, TextInput, TouchableOpacity, ScrollView } from 'react-native';
+import firebase from '../configFirebase'
 
 export default function About(props) {
 
-    Logout = (() => {
-        alert("User Log out")
-    })
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged((user) => {
+            if (!user) {
+                props.navigation.navigate("About")
+                // ...
+            }
+        });
+    }, [])
+    const Logout = () => {
+        firebase.auth().signOut()
+            .then(() => {
+                alert("User Log out")
+                props.navigation.navigate("Home")
+
+            })
+            .catch(error => alert(error.message))
+    }
 
 
     return (
@@ -21,7 +36,7 @@ export default function About(props) {
                 <TouchableOpacity onPress={() => props.navigation.navigate('InputF')} >
                     <Text style={styles.btn2}>Be A Donor</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={Logout} onPress={() => props.navigation.navigate('About')} >
+                <TouchableOpacity onPress={Logout}  >
                     <Text style={styles.btn3}>Log Out</Text>
                 </TouchableOpacity>
             </View>
@@ -51,7 +66,8 @@ const styles = StyleSheet.create({
         margin: 10,
         padding: 10,
         color: "white",
-        textAlign: "center"
+        textAlign: "center",
+        fontFamily:"san-serif"
     },
     btn2: {
         marginTop: 60,

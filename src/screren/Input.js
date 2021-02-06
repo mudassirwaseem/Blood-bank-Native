@@ -7,19 +7,21 @@ export default function InputF(props) {
 
 
     const [name, setname] = useState("")
-    const [gender, setgender] = useState("")
+    const [gender, setgender] = useState("Male")
     const [age, setage] = useState("")
-    const [bloodgroup, setbloodgroup] = useState("")
+    const [bloodgroup, setbloodgroup] = useState("A+")
     const [Number, setNumber] = useState("")
     const [address, setaddress] = useState("")
 
 
     Submit = (() => {
-
-        let value = { name, gender, age, bloodgroup, address, Number }
-        firebase.database().ref("user").push(value)
-        alert("Information Submit")
-        props.navigation.navigate("Main")
+        if (name && gender && age && bloodgroup && Number && address) {
+            let value = { name, gender, age, bloodgroup, address, Number }
+            firebase.database().ref("user").push(value)
+            alert("Information Submit")
+            props.navigation.navigate("Main")
+        }
+        else alert("Please fill in all fields")
 
 
     })
@@ -101,7 +103,7 @@ export default function InputF(props) {
                                 <Picker.Item label="O-" value="O-" />
                                 <Picker.Item label="AB-" value="AB-" />
                                 <Picker.Item label="AB+" value="AB+" />
-                                
+
 
                             </Picker>
                         </Item>
