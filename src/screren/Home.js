@@ -50,7 +50,9 @@ const styles = StyleSheet.create({
         margin: 10,
         padding: 10,
         color: "white",
-        textAlign: "center"
+        textAlign: "center",
+        fontSize:20,
+        fontWeight:"bold"
     },
     btn2: {
         backgroundColor: "green",
@@ -59,7 +61,9 @@ const styles = StyleSheet.create({
         margin: 10,
         padding: 10,
         color: "white",
-        textAlign: "center"
+        textAlign: "center",
+        fontSize:20,
+        fontWeight:"bold"
     },
     tinyLogo: {
         width: 300,

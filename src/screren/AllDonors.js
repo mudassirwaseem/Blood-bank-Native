@@ -30,19 +30,19 @@ export default function AllDonors() {
 
             (
                 <View style={styles.container}>
-                    <Text style={{ fontSize: 34, margin: 10, textAlign: "center", color: "red", fontWeight: "bold" }}> Donors</Text>
+                    <Text style={{ fontSize: 40, margin: 10, textAlign: "center", color: "red", fontWeight: "bold" }}> Donors</Text>
 
                     <ScrollView>
                         {
                             Alldata.map((all, key) => {
                                 return <View style={styles.container1} key={key} >
-                                    <Text style={{ textAlign: "center", fontSize: 20 }}> Name : {all.name}</Text>
-                                    <Text style={{ textAlign: "center", fontSize: 15 }}> Blood Group : {all.bloodgroup}</Text>
-                                    <Text style={{ textAlign: "center", fontSize: 15 }}> Gender : {all.gender}</Text>
-                                    <Text style={{ textAlign: "center", fontSize: 15 }}> Address : {all.address}</Text>
-                                    <Text style={{ textAlign: "center", fontSize: 15 }}> Contact : {all.Number}</Text>
-                                    <Text style={{ textAlign: "center", fontSize: 15 }}> Age : {all.age}</Text>
-
+                                    <Text style={{ textAlign: "center", fontSize: 25 ,color:"blue",fontWeight:"bold"}}> Name : {all.name}</Text>
+                                    <Text style={{ textAlign: "center", fontSize: 15 ,color:"red"}}> Blood Group : {all.bloodgroup}</Text>
+                                    <Text style={{ textAlign: "center", fontSize: 15 ,color:"red"}}> Gender : {all.gender}</Text>
+                                    <Text style={{ textAlign: "center", fontSize: 15 ,color:"red" }}> Address : {all.address}</Text>
+                                    <Text style={{ textAlign: "center", fontSize: 15 ,color:"red" }}> Contact : {all.Number}</Text>
+                                    <Text style={{ textAlign: "center", fontSize: 15 ,color:"red"}}> Age : {all.age}</Text>
+                                 
                                 </View>
                             })
                         }
@@ -66,8 +66,10 @@ const styles = StyleSheet.create({
         color: "red",
         fontSize: 20,
         marginTop: 10,
-        marginBottom: 20
-
+        marginBottom: 20,
+        borderWidth: 2,
+        borderColor:'red',
+        fontFamily: "Cochin"
 
 
 

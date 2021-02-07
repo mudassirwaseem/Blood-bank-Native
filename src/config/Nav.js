@@ -25,11 +25,51 @@ function Navigation() {
             fontWeight: 'bold',
           },
         }} name="Home" component={Home} />
-        <Stack.Screen name="Contact" component={Contact} />
-        <Stack.Screen options={{ title: "Login" }} name="About" component={About} />
-        <Stack.Screen name="Main" component={Main} />
-        <Stack.Screen name="InputF" component={InputF} />
-        <Stack.Screen name="AllDonors" component={AllDonors} />
+        <Stack.Screen options={{
+          title: "Sign Up",
+          headerStyle: {
+            backgroundColor: 'white',
+          },
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          }
+        }} name="Contact" component={Contact} />
+        <Stack.Screen options={{
+          title: "Login",
+          headerStyle: {
+            backgroundColor: 'white',
+          },
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          }
+        }} name="About" component={About} />
+        <Stack.Screen options={{
+          title: "Dashboard",
+          headerStyle: {
+            backgroundColor: 'white',
+          },
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          }
+        }} name="Main" component={Main} />
+        <Stack.Screen options={{
+          title: "Users Data",
+          headerStyle: {
+            backgroundColor: 'white',
+          },
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          }
+        }} name="InputF" component={InputF} />
+        <Stack.Screen options={{
+          title: "Donor Details",
+          headerStyle: {
+            backgroundColor: 'white',
+          },
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          }
+        }} name="AllDonors" component={AllDonors} />
       </Stack.Navigator>
     </NavigationContainer>
   );

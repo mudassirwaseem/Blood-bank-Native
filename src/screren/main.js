@@ -25,9 +25,13 @@ export default function About(props) {
 
     return (
         <View style={styles.container}>
-            <View style={styles.container1}>
-                <Text style={{ fontSize: 34, color: "white", fontWeight: "bold", textAlign: "center", marginTop: 20 }}>Wellcome Blood Bank</Text>
-
+            <View >
+            <Image
+                            style={styles.tinyLogo}
+                            source={{
+                                uri: 'https://images.pexels.com/photos/1164531/pexels-photo-1164531.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                            }}
+                        />
             </View>
             <View>
                 <TouchableOpacity onPress={() => props.navigation.navigate('AllDonors')} >
@@ -67,7 +71,11 @@ const styles = StyleSheet.create({
         padding: 10,
         color: "white",
         textAlign: "center",
-        fontFamily:"san-serif"
+    },
+       tinyLogo: {
+        width: 340,
+        height: 200,
+        marginTop:10
     },
     btn2: {
         marginTop: 60,

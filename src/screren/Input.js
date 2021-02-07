@@ -30,7 +30,7 @@ export default function InputF(props) {
         <ScrollView>
             <View style={styles.container}>
                 <View style={styles.container1}>
-                    <Text style={{ fontSize: 24, color: "red", fontWeight: "bold", textAlign: "center", marginTop: 20 }}>Wellcome Donor</Text>
+                    <Text style={{ fontSize: 34, color: "red", fontWeight: "bold", textAlign: "center", marginTop: 20 }}>Wellcome Donor</Text>
 
                 </View>
 
@@ -69,17 +69,7 @@ export default function InputF(props) {
                             </Picker>
                         </Item>
                     </Form>
-                    <Text style={styles.text}>Age:</Text>
-                    <TextInput
-                        keyboardType="numeric"
-                        onChangeText={(val) => setage(val)}
 
-                        style={{
-                            height: 40, textAlign: "center", borderRadius: 10, margin: "auto",
-                            borderColor: 'gray', borderWidth: 2, backgroundColor: "white", width: 300
-                        }}
-                        placeholder="Enter Your Age"
-                    />
                     <Text style={{ fontSize: 16, marginTop: 10 }}>Blood Group :</Text>
 
                     <Form>
@@ -108,6 +98,17 @@ export default function InputF(props) {
                             </Picker>
                         </Item>
                     </Form>
+                    <Text style={styles.text}>Age:</Text>
+                    <TextInput
+                        keyboardType="numeric"
+                        onChangeText={(val) => setage(val)}
+
+                        style={{
+                            height: 40, textAlign: "center", borderRadius: 10, margin: "auto",
+                            borderColor: 'gray', borderWidth: 2, backgroundColor: "white", width: 300
+                        }}
+                        placeholder="Enter Your Age"
+                    />
                     <Text style={styles.text}>Number</Text>
                     <TextInput
                         keyboardType="numeric"

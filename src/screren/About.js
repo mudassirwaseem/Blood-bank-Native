@@ -12,19 +12,19 @@ export default function About(props) {
         firebase.auth().onAuthStateChanged((user) => {
             if (user) {
                 props.navigation.navigate("Main")
-                // ...
+                
             }
         });
     }, [])
     const submit = (() => {
         let a = { name, password }
-        alert("User Login")
         console.log(a)
         //    firebase.database().ref("users").push(a)
-
+        
         // props.navigation.navigate("Main") iski waja sy navigatio kr rha tha
         firebase.auth().signInWithEmailAndPassword(name, password)
-            .then((userCredential) => {
+        .then((userCredential) => {
+                alert("User Login")
                 console.log("signed iN")
                 props.navigation.navigate("Main")
                 // Signed in
@@ -32,7 +32,8 @@ export default function About(props) {
                 // ...
             })
             .catch((error) => {
-                console.log(error.message)
+                // console.log(error.message)
+                alert(error.message)
                 var errorCode = error.code;
                 var errorMessage = error.message;
             });
@@ -56,7 +57,7 @@ export default function About(props) {
                         <TextInput
                             onChangeText={(val) => setname(val)}
                             style={{
-                                height: 40, textAlign: "center", borderRadius: 10, margin: "auto",
+                                height: 40, textAlign: "center", borderRadius: 10, margin: "auto",marginTop:10,
                                 borderColor: 'gray', borderWidth: 2, backgroundColor: "white", width: 300
                             }}
                             placeholder="Enter Email"
@@ -68,7 +69,7 @@ export default function About(props) {
                             secureTextEntry={true}
                             onChangeText={(val) => setpassword(val)}
                             style={{
-                                height: 40, textAlign: "center", borderRadius: 10, margin: "auto",
+                                height: 40, textAlign: "center", borderRadius: 10, margin: "auto",marginTop:10,
                                 borderColor: 'gray', borderWidth: 2, backgroundColor: "white", width: 300
                             }}
                             placeholder="Enter Password"
